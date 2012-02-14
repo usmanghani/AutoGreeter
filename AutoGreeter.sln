@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoGreeter", "AutoGreeter\AutoGreeter.csproj", "{749E7765-47F5-4FDE-B56D-01EAE0423CD1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoGreeter.Tests", "AutoGreeter.Tests\AutoGreeter.Tests.csproj", "{1B8C4816-1157-42B9-A27D-50AF7DF1C01C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{749E7765-47F5-4FDE-B56D-01EAE0423CD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{749E7765-47F5-4FDE-B56D-01EAE0423CD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{749E7765-47F5-4FDE-B56D-01EAE0423CD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{749E7765-47F5-4FDE-B56D-01EAE0423CD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B8C4816-1157-42B9-A27D-50AF7DF1C01C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B8C4816-1157-42B9-A27D-50AF7DF1C01C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B8C4816-1157-42B9-A27D-50AF7DF1C01C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B8C4816-1157-42B9-A27D-50AF7DF1C01C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

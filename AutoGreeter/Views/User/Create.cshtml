@@ -1,0 +1,89 @@
+﻿@model AutoGreeter.Models.User
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>User</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CreatedAt)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CreatedAt)
+            @Html.ValidationMessageFor(model => model.CreatedAt)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UpdatedAt)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UpdatedAt)
+            @Html.ValidationMessageFor(model => model.UpdatedAt)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Username)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Username)
+            @Html.ValidationMessageFor(model => model.Username)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TwitterHandle)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TwitterHandle)
+            @Html.ValidationMessageFor(model => model.TwitterHandle)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FacebookHandle)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FacebookHandle)
+            @Html.ValidationMessageFor(model => model.FacebookHandle)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Salt)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Salt)
+            @Html.ValidationMessageFor(model => model.Salt)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PasswordHash)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PasswordHash)
+            @Html.ValidationMessageFor(model => model.PasswordHash)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

@@ -1,0 +1,35 @@
+﻿@model AutoGreeter.Models.Greeting
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Greeting</legend>
+
+    <div class="display-label">GreetingText</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.GreetingText)
+    </div>
+
+    <div class="display-label">UserId</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserId)
+    </div>
+
+    <div class="display-label">CreatedAt</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreatedAt)
+    </div>
+
+    <div class="display-label">UpdatedAt</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UpdatedAt)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

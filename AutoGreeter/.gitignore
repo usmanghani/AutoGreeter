@@ -1,0 +1,7 @@
+*.suo
+DesignTimeResolveAssemblyReferencesInput.cache
+QuantaeAdminWebApp.Tests/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cach
+QuantaeWebApp.Tests/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+TestMvcApp/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+bin
+Debug

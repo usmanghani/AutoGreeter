@@ -1,0 +1,73 @@
+﻿@model AutoGreeter.Models.UserSession
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>UserSession</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Token)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Token)
+            @Html.ValidationMessageFor(model => model.Token)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserId, "User")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("UserId", String.Empty)
+            @Html.ValidationMessageFor(model => model.UserId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Username)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Username)
+            @Html.ValidationMessageFor(model => model.Username)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CreatedAt)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CreatedAt)
+            @Html.ValidationMessageFor(model => model.CreatedAt)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LastLoginTimestamp)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LastLoginTimestamp)
+            @Html.ValidationMessageFor(model => model.LastLoginTimestamp)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ExpirationTimestamp)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ExpirationTimestamp)
+            @Html.ValidationMessageFor(model => model.ExpirationTimestamp)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

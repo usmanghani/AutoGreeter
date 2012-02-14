@@ -1,0 +1,48 @@
+﻿@model AutoGreeter.Models.GreetingOccurence
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>GreetingOccurence</legend>
+
+    <div class="display-label">StartAt</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.StartAt)
+    </div>
+
+    <div class="display-label">EndAt</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EndAt)
+    </div>
+
+    <div class="display-label">RepeatCount</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RepeatCount)
+    </div>
+
+    <div class="display-label">User</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.User.Username)
+    </div>
+
+    <div class="display-label">CreatedAt</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreatedAt)
+    </div>
+
+    <div class="display-label">UpdatedAt</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UpdatedAt)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
