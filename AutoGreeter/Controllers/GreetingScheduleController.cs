@@ -11,7 +11,12 @@ namespace AutoGreeter.Controllers
 { 
     public class GreetingScheduleController : Controller
     {
-        private DatabaseContext db = new DatabaseContext();
+        private IGreeterContext db;
+
+        public GreetingScheduleController(IGreeterContext context)
+        {
+            this.db = context;
+        }
 
         //
         // GET: /GreetingSchedule/

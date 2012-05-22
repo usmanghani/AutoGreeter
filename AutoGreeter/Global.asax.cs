@@ -4,6 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Autofac;
+using Autofac.Integration.Mvc;
+using System.Reflection;
+using AutoGreeter.Models;
 
 namespace AutoGreeter
 {
@@ -31,6 +35,15 @@ namespace AutoGreeter
 
         protected void Application_Start()
         {
+            var builder = new ContainerBuilder();
+            builder.RegisterControllers(Assembly.GetExecutingAssembly());
+            builder.RegisterModule(new AutofacWebTypesModule());
+            builder.RegisterModelBinderProvider();
+            builder.RegisterType<DefaultGreeterContext>();
+            
+            IContainer container = builder.Build();
+            DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+
             AreaRegistration.RegisterAllAreas();
 
             RegisterGlobalFilters(GlobalFilters.Filters);

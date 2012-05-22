@@ -11,7 +11,12 @@ namespace AutoGreeter.Controllers
 { 
     public class UserSessionController : Controller
     {
-        private DatabaseContext db = new DatabaseContext();
+        private IGreeterContext db;
+
+        public UserSessionController(IGreeterContext context)
+        {
+            this.db = context;
+        }
 
         //
         // GET: /UserSession/

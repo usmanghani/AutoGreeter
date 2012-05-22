@@ -1,0 +1,23 @@
+﻿<h2>TodoItems (<span data-bind="text: paging.totalItems"></span>)</h2>
+
+<div data-bind="visible: paging.totalItems() > 0">
+    @Html.Partial("_Paging")
+
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>IsDone</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: todoItems">
+            <tr data-bind="click: $parent.editTodoItem" style="cursor: pointer">
+                <td data-bind="text: Title"></td>
+                <td data-bind="text: IsDone"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p><button data-bind="click: createTodoItem">Create TodoItem</button></p>
+

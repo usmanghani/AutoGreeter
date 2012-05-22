@@ -11,15 +11,20 @@ namespace AutoGreeter.Controllers
 { 
     public class GreetingRecipientController : Controller
     {
-        private DatabaseContext db = new DatabaseContext();
+        private IGreeterContext db;
+
+        public GreetingRecipientController(IGreeterContext context)
+        {
+            this.db = context;
+        }
 
         //
         // GET: /GreetingRecipient/
 
         public ViewResult Index()
         {
-            var greetingtargets = db.GreetingTargets.Include(g => g.User);
-            return View(greetingtargets.ToList());
+            var GreetingRecipients = db.GreetingRecipients.Include(g => g.User);
+            return View(GreetingRecipients.ToList());
         }
 
         //
@@ -27,7 +32,7 @@ namespace AutoGreeter.Controllers
 
         public ViewResult Details(int id)
         {
-            GreetingRecipient greetingtarget = db.GreetingTargets.Find(id);
+            GreetingRecipient greetingtarget = db.GreetingRecipients.Find(id);
             return View(greetingtarget);
         }
 
@@ -48,7 +53,7 @@ namespace AutoGreeter.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.GreetingTargets.Add(greetingtarget);
+                db.GreetingRecipients.Add(greetingtarget);
                 db.SaveChanges();
                 return RedirectToAction("Index");  
             }
@@ -62,7 +67,7 @@ namespace AutoGreeter.Controllers
  
         public ActionResult Edit(int id)
         {
-            GreetingRecipient greetingtarget = db.GreetingTargets.Find(id);
+            GreetingRecipient greetingtarget = db.GreetingRecipients.Find(id);
             ViewBag.UserId = new SelectList(db.Users, "Id", "Username", greetingtarget.UserId);
             return View(greetingtarget);
         }
@@ -88,7 +93,7 @@ namespace AutoGreeter.Controllers
  
         public ActionResult Delete(int id)
         {
-            GreetingRecipient greetingtarget = db.GreetingTargets.Find(id);
+            GreetingRecipient greetingtarget = db.GreetingRecipients.Find(id);
             return View(greetingtarget);
         }
 
@@ -98,8 +103,8 @@ namespace AutoGreeter.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {            
-            GreetingRecipient greetingtarget = db.GreetingTargets.Find(id);
-            db.GreetingTargets.Remove(greetingtarget);
+            GreetingRecipient greetingtarget = db.GreetingRecipients.Find(id);
+            db.GreetingRecipients.Remove(greetingtarget);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

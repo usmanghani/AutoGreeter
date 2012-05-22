@@ -11,7 +11,12 @@ namespace AutoGreeter.Controllers
 {
     public class AccountController : Controller
     {
-        DatabaseContext db = new DatabaseContext();
+        IGreeterContext db;
+
+        public AccountController(IGreeterContext context)
+        {
+            this.db = context;
+        }
 
         //
         // GET: /Account/LogOn

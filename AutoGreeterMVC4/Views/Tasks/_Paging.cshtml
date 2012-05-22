@@ -1,0 +1,10 @@
+﻿<p data-bind="with: paging">
+    Page <b data-bind="text: pageIndex"></b> 
+    of <b data-bind="text: totalPages"></b>
+    | Show <select data-bind="options: [5, 10, 20, 50], value: pageSize"></select> per page
+
+    <a href="#" data-bind="click: moveFirst, visible: canMovePrev">&laquo; First</a>
+	<a href="#" data-bind="click: movePrev, visible: canMovePrev">&laquo; Prev</a>
+	<a href="#" data-bind="click: moveNext, visible: canMoveNext">Next &raquo;</a>
+    <a href="#" data-bind="click: moveLast, visible: canMoveNext">Last &raquo;</a>
+</p>

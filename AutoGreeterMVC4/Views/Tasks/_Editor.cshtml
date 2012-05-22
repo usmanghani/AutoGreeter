@@ -1,0 +1,25 @@
+﻿<h2>Edit TodoItem</h2>
+
+<form data-bind="with: editingTodoItem, validate: validationConfig">
+    <p data-bind="visible: TodoItemId">
+        TodoItemId:
+        <b data-bind="text: TodoItemId"></b>
+    </p>
+    <p>
+        Title:
+        <input name="Title" data-bind="value: Title, autovalidate: true" />
+        <span class="error" data-bind="text: Title.ValidationError"></span>
+    </p>
+    <p>
+        IsDone:
+        <input name="IsDone" type="checkbox" data-bind="checked: IsDone, autovalidate: true" />
+        <span class="error" data-bind="text: IsDone.ValidationError"></span>
+    </p>
+    <p>
+        <button type="submit" data-bind="enable: CanSave">Save</button>
+        <a href="#" data-bind="visible: TodoItemId, click: $parent.deleteTodoItem">Delete</a>
+        <a href="#" data-bind="click: $parent.showGrid">Back to grid</a>
+        <a href="#" data-bind="visible: IsUpdated, click: $parent.revertEdit">Undo changes</a>
+    </p>
+</form>
+

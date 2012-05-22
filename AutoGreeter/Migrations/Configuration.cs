@@ -5,14 +5,14 @@ namespace AutoGreeter.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<AutoGreeter.Models.DatabaseContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<AutoGreeter.Models.DefaultGreeterContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(AutoGreeter.Models.DatabaseContext context)
+        protected override void Seed(AutoGreeter.Models.DefaultGreeterContext context)
         {
             //  This method will be called after migrating to the latest version.
 

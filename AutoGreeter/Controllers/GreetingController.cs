@@ -11,7 +11,12 @@ namespace AutoGreeter.Controllers
 { 
     public class GreetingController : Controller
     {
-        private DatabaseContext db = new DatabaseContext();
+        private IGreeterContext db;
+
+        public GreetingController(IGreeterContext context)
+        {
+            this.db = context;
+        }
 
         //
         // GET: /Greeting/
@@ -71,7 +76,7 @@ namespace AutoGreeter.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(greeting).State = EntityState.Modified;
+                db.SetModified(greeting);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
